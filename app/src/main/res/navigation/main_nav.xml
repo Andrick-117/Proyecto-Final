@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Declaración del archivo XML y su codificación -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/loginFragment">
+    <!-- Definición del elemento <navigation> con los espacios de nombres necesarios
+         y la configuración de la navegación con un ID y la pantalla de inicio -->
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.federicocotogno.habittracker2020.ui.fragments.Login.LoginFragment"
+        android:label="Inicio de sesión"
+        tools:layout="@layout/fragment_login">
+        <!-- Definición del fragmento de login con su ID, nombre completo de la clase,
+             etiqueta y el layout asociado -->
+
+        <action
+            android:id="@+id/action_loginFragment_to_habitList"
+            app:destination="@id/habitList" />
+        <!-- Acción que navega desde el loginFragment a habitList -->
+    </fragment>
+
+    <!-- Habit List Fragment -->
+    <fragment
+        android:id="@+id/habitList"
+        android:name="com.federicocotogno.habittracker2020.ui.fragments.habitlist.HabitList"
+        android:label="Habitos"
+        tools:layout="@layout/fragment_habit_list">
+        <!-- Definición del fragmento de la lista de hábitos con su ID, nombre completo de la clase,
+             etiqueta y el layout asociado -->
+
+        <action
+            android:id="@+id/action_habitList_to_updateHabitItem"
+            app:destination="@id/updateHabitItem" />
+        <!-- Acción que navega desde habitList a updateHabitItem -->
+
+        <action
+            android:id="@+id/action_habitList_to_createHabitItem"
+            app:destination="@id/createHabitItem" />
+        <!-- Acción que navega desde habitList a createHabitItem -->
+
+        <action
+            android:id="@+id/action_habitList_to_createHabitItem2"
+            app:destination="@id/createHabitItem" />
+        <!-- Acción duplicada que navega desde habitList a createHabitItem -->
+    </fragment>
+
+    <!-- Update Habit Item Fragment -->
+    <fragment
+        android:id="@+id/updateHabitItem"
+        android:name="com.federicocotogno.habittracker2020.ui.fragments.updatehabit.UpdateHabitItem"
+        android:label="Actuliza un habito"
+        tools:layout="@layout/fragment_update_habit_item">
+        <!-- Definición del fragmento de actualización de hábitos con su ID, nombre completo de la clase,
+             etiqueta y el layout asociado -->
+
+        <action
+            android:id="@+id/action_updateHabitItem_to_habitList"
+            app:destination="@id/habitList"
+            app:exitAnim="@anim/fragment_close_exit" />
+        <!-- Acción que navega desde updateHabitItem a habitList con animación de salida -->
+
+        <argument
+            android:name="selectedHabit"
+            app:argType="com.federicocotogno.habittracker2020.data.models.Habit" />
+        <!-- Argumento pasado a updateHabitItem que es un objeto Habit -->
+    </fragment>
+
+    <!-- Create Habit Item Fragment -->
+    <fragment
+        android:id="@+id/createHabitItem"
+        android:name="com.federicocotogno.habittracker2020.ui.fragments.createhabit.CreateHabitItem"
+        android:label="Agrega un nuevo habito"
+        tools:layout="@layout/fragment_create_habit_item">
+        <!-- Definición del fragmento de creación de hábitos con su ID, nombre completo de la clase,
+             etiqueta y el layout asociado -->
+
+        <action
+            android:id="@+id/action_createHabitItem_to_habitList"
+            app:destination="@id/habitList" />
+        <!-- Acción que navega desde createHabitItem a habitList -->
+    </fragment>
+</navigation>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.fragments.createhabit.CreateHabitItem">
+
+    <!-- ScrollView para permitir el desplazamiento vertical del contenido -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <!-- LinearLayout que contiene todos los elementos de entrada de datos -->
+        <LinearLayout
+            android:id="@+id/ll_textviews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- EditText para el título del hábito -->
+            <EditText
+                android:id="@+id/et_habitTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Titulo del habito"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <!-- EditText para la descripción del hábito -->
+            <EditText
+                android:id="@+id/et_habitDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#26A69A"
+                android:hint="Da una pequeña descripcion"
+                android:inputType="textShortMessage"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <!-- Botón para seleccionar una fecha -->
+            <Button
+                android:id="@+id/btn_pickDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="#EF5350"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Selecciona una Fecha"
+                android:textColor="@android:color/white" />
+
+            <!-- TextView para mostrar la fecha seleccionada -->
+            <TextView
+                android:id="@+id/tv_dateSelected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Fecha: (no seleccionada)"
+                android:textSize="20sp" />
+
+            <!-- Botón para seleccionar una hora -->
+            <Button
+                android:id="@+id/btn_pickTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="#42A5F5"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Selecciona la Hora"
+                android:textColor="@android:color/white" />
+
+            <!-- TextView para mostrar la hora seleccionada -->
+            <TextView
+                android:id="@+id/tv_timeSelected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Hora: (Hora no selecionada)"
+                android:textSize="20sp" />
+
+            <!-- LinearLayout para contener las imágenes seleccionadas -->
+            <LinearLayout
+                android:id="@+id/layout_tea_smoking_fastfood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- ImageView para mostrar la selección de té -->
+                <ImageView
+                    android:id="@+id/iv_teaSelected"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/tea_selected" />
+
+                <!-- ImageView para mostrar la selección de comida rápida -->
+                <ImageView
+                    android:id="@+id/iv_fastFoodSelected"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/fastfood_selected" />
+
+                <!-- ImageView para mostrar la selección de fumar -->
+                <ImageView
+                    android:id="@+id/iv_smokingSelected"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/smoking_selected" />
+
+            </LinearLayout>
+
+            <!-- Botón para confirmar la creación del hábito -->
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="#26A69A"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Confirmar"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
